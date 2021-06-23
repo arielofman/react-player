@@ -1,5 +1,5 @@
 {
-  "name": "react-player",
+  "name": "reactjs-player-v2",
   "version": "2.9.0",
   "description": "A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia and DailyMotion",
   "main": "lib/index.js",
@@ -21,13 +21,9 @@
     "build:standalone": "cross-env NODE_ENV=production webpack --config webpack/standalone.babel.js",
     "preversion": "npm run lint && npm run test",
     "version": "auto-changelog -p && npm run build:dist && npm run build:standalone && git add CHANGELOG.md dist",
-    "prepublishOnly": "npm run build:lib && npm run build:lazy && npm run build:dist && node scripts/pre-publish.js && cp -r types/* .",
+    "prepublishOnly": "npm run build:lib && npm run build:lazy && npm run build:dist && node scripts/pre-publish.js && xcopy types\\ . /E",
     "postpublish": "node scripts/post-publish.js && npm run clean"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/CookPete/react-player.git"
-  },
+  }, 
   "keywords": [
     "react",
     "media",
@@ -47,11 +43,7 @@
     "react-component"
   ],
   "author": "Pete Cook <pete@cookpete.com> (http://github.com/cookpete)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CookPete/react-player/issues"
-  },
-  "homepage": "https://github.com/CookPete/react-player",
+  "license": "MIT", 
   "peerDependencies": {
     "react": ">=16.6.0"
   },
